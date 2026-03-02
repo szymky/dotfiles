@@ -20,3 +20,9 @@ if [ -f packages.txt ]; then
 else
   echo "Failed to find packages.txt"
 fi
+
+
+sudo systemctl enable --now ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
