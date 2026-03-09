@@ -40,7 +40,7 @@
       ft = "rust",
       init = function ()
         vim.g.rustfmt_autosave = 1
-      end 
+      end
     },
 
     {
@@ -55,10 +55,10 @@
         end
         dap.listeners.before.event_terminated.dapui_config = function()
           dapui.close()
-        end 
+        end
         dap.listeners.before.event_exited.dapui_config = function()
           dapui.close()
-        end 
+        end
       end,
     },
 
@@ -88,7 +88,6 @@
         })
       end
     },
-
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
