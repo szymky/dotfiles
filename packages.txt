@@ -5,6 +5,7 @@ arduino-ide-bin
 bambustudio-bin
 base
 base-devel
+bat
 bc
 bluez
 bluez-utils
@@ -13,6 +14,7 @@ bubblejail
 ccache
 clang
 cmake
+cmatrix
 dfu-util
 discord
 docker
@@ -49,6 +51,7 @@ libisoburn
 libpulse
 linux
 linux-firmware
+llvm
 lsd
 lunar-client
 man-db
@@ -59,6 +62,7 @@ minecraft-launcher
 mingw-w64-gcc
 minicom
 mtools
+mullvad-vpn-bin
 nano
 nautilus
 nautilus-share
@@ -98,6 +102,7 @@ vim
 vulkan-radeon
 waybar
 wget
+winboat-bin
 wireless_tools
 wireplumber
 wl-clipboard
@@ -111,6 +116,7 @@ xorg-xinit
 yay
 yay-debug
 yazi
+zig
 zip
 zoxide
 zram-generator
