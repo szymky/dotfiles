@@ -1,5 +1,0 @@
-
-
-fn main () void {
-  print("Hello World");
-}

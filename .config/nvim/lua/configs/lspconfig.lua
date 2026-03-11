@@ -1,7 +1,12 @@
 require("nvchad.configs.lspconfig").defaults()
 
+vim.lsp.config("pyright", {
+  cmd = { "uv", "run", "pyright-langserver", "--stdio" },
 
-local servers = { "html", "cssls", "clangd", "zls" }
+  root_markers = { "pyproject.toml", ".git" },
+})
+
+local servers = { "html", "cssls", "pyright", "clangd", "zls", "rust-analyzer" }
 vim.lsp.enable(servers)
 
 

@@ -89,6 +89,23 @@
       end
     },
 
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function (_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, {"python", "toml", "json", "yaml", "markdown", "rust"})
+      end,
+    },
+
+    {
+      'nvim-telescope/telescope.nvim',
+      version = '*',
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    },
+}
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
