@@ -6,7 +6,15 @@ vim.lsp.config("pyright", {
   root_markers = { "pyproject.toml", ".git" },
 })
 
-local servers = { "html", "cssls", "pyright", "clangd", "zls", "rust-analyzer" }
+local servers = {
+  "html",
+  "cssls",
+  "pyright",
+  "clangd",
+  "zls",
+  "rust-analyzer"
+}
+
 vim.lsp.enable(servers)
 
 

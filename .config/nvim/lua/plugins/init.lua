@@ -1,11 +1,9 @@
-  return {
+return {
     {
       "stevearc/conform.nvim",
-      -- event = 'BufWritePre', -- uncomment for format on save
       opts = require "configs.conform",
     },
 
-    -- These are some examples, uncomment them if you want to see them work!
     {
       "neovim/nvim-lspconfig",
       config = function()
@@ -16,8 +14,8 @@
 
     {
       'mrcjkb/rustaceanvim',
-      version = '^8', -- Recommended
-      lazy = false, -- This plugin is already lazy
+      version = '^8',
+      lazy = false,
       ft = "rust",
       config = function()
         local mason_registry = require('mason-registry')
@@ -72,28 +70,12 @@
       end,
     },
 
-    {
-      'saecki/crates.nvim',
-      ft = {"toml"},
-      config = function()
-        require("crates").setup {
-          completion = {
-            cmp = {
-              enable = true
-            },
-          },
-        }
-        require('cmp').setup.buffer({
-          sources = {{name = "crates"}}
-        })
-      end
-    },
 
     {
       "nvim-treesitter/nvim-treesitter",
       opts = function (_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, {"python", "toml", "json", "yaml", "markdown", "rust"})
+        vim.list_extend(opts.ensure_installed, {"python", "toml", "json", "yaml", "markdown", "rust", "go"})
       end,
     },
 
@@ -104,9 +86,6 @@
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-}
-
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  }
 
 }
