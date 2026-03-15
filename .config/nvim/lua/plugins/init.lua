@@ -86,6 +86,18 @@ return {
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
+
+    {
+        "NeogitOrg/neogit",
+        lazy=true,
+        dependencies={
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+        },
+        cmd = "Neogit",
+    },
+
+
   }
 
 }
