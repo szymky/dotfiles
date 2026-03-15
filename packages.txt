@@ -1,4 +1,5 @@
 aarch64-linux-gnu-gcc
+allegro
 amd-ucode
 android-tools
 arduino-ide-bin
@@ -27,6 +28,7 @@ emacs
 exfatprogs
 fastfetch
 firefox
+fzf
 gdb
 gimp
 git
@@ -61,6 +63,7 @@ mfgtools-git
 minecraft-launcher
 mingw-w64-gcc
 minicom
+modrinth-app
 mtools
 mullvad-vpn-bin
 nano
@@ -81,6 +84,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 polkit-kde-agent
+prismlauncher
 python-pip
 python-virtualenv
 qemu-full
