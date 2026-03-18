@@ -63,7 +63,6 @@ mfgtools-git
 minecraft-launcher
 mingw-w64-gcc
 minicom
-modrinth-app
 mtools
 mullvad-vpn-bin
 nano
@@ -87,7 +86,6 @@ polkit-kde-agent
 prismlauncher
 python-pip
 python-virtualenv
-qemu-full
 qt5-wayland
 qt6-virtualkeyboard
 qt6-wayland
@@ -107,10 +105,10 @@ unzip
 uwsm
 vim
 vulkan-radeon
+w3m
 waybar
 wget
 winboat-bin
-wireless_tools
 wireplumber
 wl-clipboard
 wofi
