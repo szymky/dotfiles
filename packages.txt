@@ -18,6 +18,7 @@ cmake
 cmatrix
 dfu-util
 discord
+dmenu
 docker
 docker-compose
 dolphin
@@ -28,6 +29,7 @@ emacs
 exfatprogs
 fastfetch
 firefox
+foot
 fzf
 gdb
 gimp
@@ -93,6 +95,7 @@ snapd
 spotify
 steam
 sudo
+sway
 topgrade
 ttf-jetbrains-mono-nerd
 ufw
