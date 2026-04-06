@@ -12,7 +12,10 @@ local servers = {
   "pyright",
   "clangd",
   "zls",
-  "rust-analyzer"
+  "rust-analyzer",
+  "svelte",
+  "tailwindcss",
+  "ts_ls"
 }
 
 vim.lsp.enable(servers)
