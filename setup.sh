@@ -12,6 +12,8 @@ if ! command -v yay &> /dev/null; then
   makepkg -si
 fi 
 
+cd ~
+
 if [ -f packages.txt ]; then
   yay -S --needed --noconfirm - < packages.txt
 else
@@ -19,8 +21,3 @@ else
 fi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-sudo systemctl enable --now ufw
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw enable

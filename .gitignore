@@ -1,0 +1,14 @@
+
+*
+
+!.config/
+!.config/**
+
+!.zshrc
+
+!backup_packages.sh
+!packages.txt
+!setup.sh
+
+
+!.gitignore

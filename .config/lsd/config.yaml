@@ -1,0 +1,58 @@
+classic: false
+
+
+blocks:
+  - permission
+  - user
+  - group
+  - git
+  - size
+  - date
+  - name
+
+color:
+  when: auto
+
+  theme: custom 
+
+date: date
+
+dereference: false
+
+icons:
+  when: auto
+  theme: fancy 
+  seperator: " "
+
+indicators: false
+
+layout: tree
+
+recursion:
+  enabled: false
+
+  depth: 2
+
+size: default
+
+sorting:
+  column: extension
+  reverse: false
+  dir-grouping: none
+
+no-symlink: false
+
+total-size: true
+
+hyperlink: auto
+
+symlink-arrow: =>
+
+header: true
+
+literal: false
+
+truncate-owner:
+  after:
+
+  marker: ""
