@@ -1,0 +1,130 @@
+/* ── Variables ──────────────────────────────────────────── */
+@define-color bg       rgba(17, 17, 27, 0.85);
+@define-color bg-alt   rgba(30, 30, 46, 0.9);
+@define-color surface  rgba(49, 50, 68, 0.8);
+@define-color border   rgba(255, 255, 255, 0.06);
+@define-color text     #cdd6f4;
+@define-color subtext  #6c7086;
+@define-color accent   #cba6f7;
+@define-color green    #a6e3a1;
+@define-color yellow   #f9e2af;
+@define-color red      #f38ba8;
+
+/* ── Bar ────────────────────────────────────────────────── */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @bg;
+  border: 1px solid @border;
+  border-radius: 10px;
+  color: @text;
+}
+
+/* ── Sections ───────────────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 4px;
+}
+
+/* ── Base widget style ──────────────────────────────────── */
+tooltip {
+  background: @bg-alt;
+  border: 1px solid @border;
+  border-radius: 8px;
+  color: @text;
+}
+
+/* ── Workspaces ─────────────────────────────────────────── */
+#workspaces {
+  padding: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  color: @subtext;
+  background: transparent;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background: @surface;
+}
+
+#workspaces button.active {
+  color: @accent;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+/* ── Clock ──────────────────────────────────────────────── */
+#clock {
+  color: @text;
+  padding: 0 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ── Shared pill style ──────────────────────────────────── */
+#wireplumber,
+#network,
+#battery,
+#tray {
+  padding: 0 10px;
+  color: @subtext;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+
+#wireplumber:hover,
+#network:hover,
+#battery:hover {
+  color: @text;
+}
+
+/* ── Volume ─────────────────────────────────────────────── */
+#wireplumber.muted {
+  color: @subtext;
+}
+
+/* ── Network ────────────────────────────────────────────── */
+#network.disconnected {
+  color: @red;
+}
+
+/* ── Battery ────────────────────────────────────────────── */
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+}
+
+/* ── Tray ───────────────────────────────────────────────── */
+#tray {
+  padding: 0 6px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: @yellow;
+}

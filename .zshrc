@@ -1,140 +1,128 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# ── Path ─────────────────────────────────────────────────────────────────────
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="imajes"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$HOME/.local/bin:$PATH
-
-eval "$(zoxide init zsh)"
-
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-    eval "$(ssh-agent -s)" > /dev/null
-fi
-
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -s > "$HOME/.ssh/ssh-agent-env"
-fi
-source "$HOME/.ssh/" > /dev/null
-
-ssh-add ~/.ssh/id_* 2>/dev/null
-
-alias ls="lsd"
-
-# bun completions
-[ -s "/home/mroeb/.bun/_bun" ] && source "/home/mroeb/.bun/_bun"
-
-# bun
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-path=('/home/mroeb/.juliaup/bin' $path)
+path=("$HOME/.juliaup/bin" $path)
 export PATH
 
-# <<< juliaup initialize <<<
+# ── SSH agent ─────────────────────────────────────────────────────────────────
+
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)" > /dev/null 2>&1
+fi
+ssh-add ~/.ssh/id_* 2>/dev/null
+
+# ── NVM ───────────────────────────────────────────────────────────────────────
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ]             && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ]    && source "$NVM_DIR/bash_completion"
+
+# ── Bun ───────────────────────────────────────────────────────────────────────
+
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# ── Zsh options ───────────────────────────────────────────────────────────────
+
+setopt AUTO_CD              # cd by typing directory name
+setopt AUTO_PUSHD           # cd pushes to dir stack
+setopt PUSHD_IGNORE_DUPS
+setopt CORRECT              # suggest corrections
+setopt INTERACTIVE_COMMENTS # allow # comments in shell
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE    # don't save commands starting with space
+setopt SHARE_HISTORY        # share history across sessions
+setopt GLOB_DOTS            # include dotfiles in globs
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE="$HOME/.zsh_history"
+
+# ── Completion ────────────────────────────────────────────────────────────────
+
+autoload -Uz compinit
+compinit -d "$HOME/.cache/zsh/zcompdump"
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'   # case insensitive
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:descriptions' format '%F{purple}── %d ──%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' squeeze-slashes true
+
+# ── Key bindings ──────────────────────────────────────────────────────────────
+
+bindkey -e                              # emacs keys (ctrl-a, ctrl-e, etc.)
+bindkey '^[[A' history-search-backward # up arrow searches history
+bindkey '^[[B' history-search-forward
+bindkey '^[[1;5C' forward-word         # ctrl+right
+bindkey '^[[1;5D' backward-word        # ctrl+left
+
+# ── Aliases — navigation ──────────────────────────────────────────────────────
+
+alias ls='lsd'
+alias ll='lsd -lah'
+alias la='lsd -A'
+alias lt='lsd --tree --depth 2'
+alias l='lsd -lh'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias -- -='cd -'   # go back to last dir
+
+# ── Aliases — tools ───────────────────────────────────────────────────────────
+
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
+alias cat='bat --style=plain'
+alias grep='grep --color=auto'
+alias df='df -h'
+alias du='du -sh'
+alias free='free -h'
+
+alias top='btop'
+
+# ── Aliases — git ─────────────────────────────────────────────────────────────
+
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpl='git pull'
+alias gl='git log --oneline --graph --decorate --all'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+
+# ── Aliases — system ──────────────────────────────────────────────────────────
+
+alias pac='yay'
+alias update='yay -Syu'
+alias cleanup='yay -Sc --noconfirm'
+alias mirrors='sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+
+alias reload='source ~/.zshrc'
+alias zshrc='nvim ~/.zshrc'
+alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
+alias wayconf='nvim ~/.config/waybar/config'
+
+alias ip='ip --color=auto'
+alias ports='ss -tulnp'
+
+# ── Zoxide ────────────────────────────────────────────────────────────────────
+
+eval "$(zoxide init zsh)"   # replaces cd with zoxide
+
+# ── Starship ──────────────────────────────────────────────────────────────────
+
+eval "$(starship init zsh)"
+

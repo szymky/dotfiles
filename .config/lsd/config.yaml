@@ -26,12 +26,10 @@ icons:
 
 indicators: false
 
-layout: tree
+layout: oneline 
 
 recursion:
   enabled: false
-
-  depth: 1
 
 size: default
 

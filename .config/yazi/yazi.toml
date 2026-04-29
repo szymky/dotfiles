@@ -1,0 +1,4 @@
+[opener]
+image = [
+  { run = 'imv "$@"', orphan = true }
+]

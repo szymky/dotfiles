@@ -1,0 +1,76 @@
+# Catppuccin Mocha theme for btop++
+# Place at: ~/.config/btop/themes/catppuccin_mocha.theme
+
+# Main background, empty for terminal default
+theme[main_bg]="#1e1e2e"
+
+# Main text color
+theme[main_fg]="#cdd6f4"
+
+# Title color for boxes
+theme[title]="#cba6f7"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#89b4fa"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#313244"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#cdd6f4"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#6c7086"
+
+# Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+theme[graph_text]="#a6adc8"
+
+# Background color of the percentage meters
+theme[meter_bg]="#313244"
+
+# Misc colors for processes box including mini cpu graphs, memory graphs and details
+theme[proc_misc]="#94e2d5"
+
+# Cpu box outline color
+theme[cpu_box]="#585b70"
+
+# Memory/disks box outline color
+theme[mem_box]="#585b70"
+
+# Net box outline color
+theme[net_box]="#585b70"
+
+# Processes box outline color
+theme[proc_box]="#585b70"
+
+# Box divider line and small boxes line color
+theme[div_line]="#45475a"
+
+# Temperature graph colors — cool (low) to hot (high)
+theme[temp_start]="#94e2d5"
+theme[temp_mid]="#f9e2af"
+theme[temp_end]="#f38ba8"
+
+# CPU graph colors — low to high usage
+theme[cpu_start]="#89dceb"
+theme[cpu_mid]="#cba6f7"
+theme[cpu_end]="#f38ba8"
+
+# Mem/Disk gauge and graph colors — low to high
+theme[mem_start]="#a6e3a1"
+theme[mem_mid]="#89b4fa"
+theme[mem_end]="#cba6f7"
+
+# Net upload/download graph colors
+theme[download_start]="#a6e3a1"
+theme[download_mid]="#89b4fa"
+theme[download_end]="#cba6f7"
+
+theme[upload_start]="#f5c2e7"
+theme[upload_mid]="#cba6f7"
+theme[upload_end]="#f38ba8"
+
+# Process color gradient — high to low cpu usage
+theme[process_start]="#f38ba8"
+theme[process_mid]="#cba6f7"
+theme[process_end]="#89b4fa"

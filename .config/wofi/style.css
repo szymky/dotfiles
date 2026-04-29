@@ -1,82 +1,90 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
 window {
-    margin: 0px;
-    border: 5px solid #1e1e2e;
-    background-color: #cdd6f4;
-    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(203, 166, 247, 0.3);
+    border-radius: 14px;
+    background-color: rgba(30, 30, 46, 0.92);
 }
 
 #input {
-    padding: 4px;
-    margin: 4px;
-    padding-left: 20px;
-    border: none;
+    margin: 12px 12px 6px 12px;
+    padding: 10px 14px;
+    border: 1px solid rgba(203, 166, 247, 0.2);
+    border-radius: 8px;
+    background-color: rgba(49, 50, 68, 0.8);
     color: #cdd6f4;
-    font-weight: bold;
-    background-color: #1e1e2e;
-    background: none;
-   	outline: none;
-    border-radius: 15px;
-    margin: 10px;
-    margin-bottom: 2px;
-}
-#input:focus {
-    border: 0px solid #1e1e2e;
+    font-size: 14px;
+    outline: none;
+    caret-color: #cba6f7;
 }
 
-#inner-box {
-    margin: 4px;
-    border: 10px solid #1e1e2e;
-    color: #cdd6f4;
-    font-weight: 400;
-    background-color: #1e1e2e;
-    border-radius: 15px;
+#input:focus {
+    border-color: rgba(203, 166, 247, 0.6);
+    background-color: rgba(49, 50, 68, 1.0);
+}
+
+/* placeholder text color */
+#input placeholder {
+    color: #6c7086;
 }
 
 #outer-box {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     border: none;
-    border-radius: 15px;
-    background-color: #1e1e2e;
+    background: transparent;
+}
+
+#inner-box {
+    margin: 0;
+    padding: 0 6px 8px 6px;
+    border: none;
+    background: transparent;
 }
 
 #scroll {
-    margin-top: 5px;
+    margin: 0;
+    padding: 0;
     border: none;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    /* background: rgb(255,255,255); */
-}
-
-#img {
-    padding: 5px;
-    margin-right: 3px;
-}
-
-#img:selected {
-    background-color: #789eda;
-    border-radius: 15px;
-}
-
-#text:selected {
-    color: #ffffff;
-    margin: 0px 0px;
-    border: none;
-    font-weight: bold;
-    border-radius: 15px;
-    background-color: #789eda;
+    background: transparent;
 }
 
 #entry {
-    margin: 0px 0px;
+    margin: 2px 6px;
+    padding: 8px 10px;
     border: none;
-    border-radius: 15px;
-    background-color: transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: #cdd6f4;
+    transition: background 0.1s ease;
 }
 
 #entry:selected {
-    margin: 0px 0px;
-    border: none;
-    border: none;
-    border-radius: 15px;
-    background-color: #789eda;
+    background-color: rgba(203, 166, 247, 0.15);
+    border: 1px solid rgba(203, 166, 247, 0.25);
+}
+
+#img {
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+#img:selected {
+    background: transparent;
+}
+
+#text {
+    color: #cdd6f4;
+    margin: 0;
+}
+
+#text:selected {
+    color: #cba6f7;
+    font-weight: 500;
+    background: transparent;
 }
