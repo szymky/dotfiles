@@ -3,7 +3,6 @@ allegro
 alsa-utils
 amd-ucode
 android-tools
-arduino-ide-bin
 bambustudio-bin
 base
 base-devel
