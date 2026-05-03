@@ -18,6 +18,9 @@
 
 !.zshrc
 
+!screenshots/desktop.png
+!screenshots/fastfetch.png
+
 !backup_packages.sh
 !packages.txt
 !setup.sh
