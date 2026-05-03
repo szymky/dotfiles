@@ -1,8 +1,20 @@
 
 *
 
-!.config/
-!.config/**
+#!.config/
+#!.config/**
+
+!.config/btop/*
+!.config/fontconfig/*
+!.config/hypr/*
+!.config/lsd/*
+!.config/mako/*
+!.config/nvim/*
+!.config/sway/*
+!.config/waybar/*
+!.config/wofi/*
+!.config/yazi/*
+!.config/starship.toml
 
 !.zshrc
 
