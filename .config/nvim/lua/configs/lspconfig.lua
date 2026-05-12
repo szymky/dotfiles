@@ -15,7 +15,8 @@ local servers = {
   "rust-analyzer",
   "svelte",
   "tailwindcss",
-  "ts_ls"
+  "ts_ls",
+  "texlab"
 }
 
 vim.lsp.enable(servers)
