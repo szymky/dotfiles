@@ -46,6 +46,7 @@ imv
 iwd
 jdtls
 jetbrains-toolbox
+kicad
 kitty
 libisoburn
 libpulse
@@ -71,6 +72,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 obsidian
+openrgb
 openssh
 pacman-contrib
 pavucontrol
@@ -87,6 +89,7 @@ qbittorrent
 qt5-wayland
 qt6-virtualkeyboard
 qt6-wayland
+raylib
 screen
 sddm
 slurp
@@ -97,6 +100,7 @@ starship
 steam
 sudo
 sway
+texlab
 topgrade
 ttf-jetbrains-mono-nerd
 ufw
