@@ -17,6 +17,7 @@ clang
 cmake
 dfu-util
 discord
+dnsmasq
 docker
 docker-compose
 dolphin
@@ -27,6 +28,7 @@ fastfetch
 foot
 fzf
 gdb
+ghostty
 gimp
 git
 glfw
@@ -86,10 +88,12 @@ prismlauncher
 python-pip
 python-virtualenv
 qbittorrent
+qemu-full
 qt5-wayland
 qt6-virtualkeyboard
 qt6-wayland
 raylib
+rsync
 screen
 sddm
 slurp
@@ -106,6 +110,7 @@ ttf-jetbrains-mono-nerd
 ufw
 unzip
 uwsm
+virt-manager
 vulkan-radeon
 waybar
 webkit2gtk-bin
